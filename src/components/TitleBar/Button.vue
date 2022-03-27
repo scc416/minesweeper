@@ -1,13 +1,15 @@
 <template>
-  
+  <span>{{ symbol }}</span>
 </template>
 
 <script>
-export default {
-
-}
+export default { props: ["symbol"] };
 </script>
 
-<style>
-
+<style scoped>
+span {
+  background: #bebebe;
+  width: 1em;
+  height: 1em;
+}
 </style>

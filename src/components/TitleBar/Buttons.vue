@@ -1,21 +1,16 @@
 <template>
   <div>
-    <span></span>
-    <span></span>
-    <span>×</span>
+    <Button />
+    <Button />
+    <Button symbol="×" />
   </div>
 </template>
 
 <script>
-export default {};
+import Button from "./Button.vue";
+
+export default { components: { Button } };
 </script>
 
 <style scoped>
-
-
-span {
-  background: #bebebe;
-  width: 1em;
-  height: 1em;
-}
 </style>
