@@ -16,5 +16,6 @@ export default { components: { Title, Buttons } };
 div {
   display: flex;
   justify-content: space-between;
+  background: #00007b;
 }
 </style>

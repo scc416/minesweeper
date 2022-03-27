@@ -1,5 +1,5 @@
 <template>
-  <div class="title">
+  <div>
     <img src="../../../public/favicon.png" />
     <span>Minesweeper</span>
   </div>
@@ -10,12 +10,11 @@ export default {};
 </script>
 
 <style scoped>
-div.title {
+div {
   display: flex;
   align-items: center;
-  background: #00007b;
-  color: #ffffff;
   font-weight: 600;
+  color: #ffffff;
 }
 
 img {
@@ -25,5 +24,4 @@ img {
 div > * {
   padding: 0.05em 0.01em 0.05em 0.08em;
 }
-
 </style>

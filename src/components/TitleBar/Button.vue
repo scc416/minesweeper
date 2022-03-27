@@ -11,11 +11,11 @@ export default {};
 </script>
 
 <style scoped>
-div {
-  display: flex;
-}
+
 
 span {
   background: #bebebe;
+  width: 1em;
+  height: 1em;
 }
 </style>
