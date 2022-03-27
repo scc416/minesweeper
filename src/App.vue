@@ -20,6 +20,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Open Sans";
+  user-select: none;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
 
 #app {
   background: #eeeeee;
-  padding: 0.2em;
+  padding: 0.22em;
 }
 
 * {
