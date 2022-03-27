@@ -18,5 +18,6 @@ div {
   justify-content: space-between;
   background: #00007b;
   align-items: center;
+  padding: 0.05em;
 }
 </style>
