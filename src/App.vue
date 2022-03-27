@@ -1,14 +1,16 @@
 <template>
   <TitleBar />
   <Menu />
+  <Board />
 </template>
 
 <script>
 import TitleBar from "./components/TitleBar/TitleBar.vue";
 import Menu from "./components/Menu/Menu.vue";
+import Board from "./components/Board/Board.vue";
 
 export default {
-  components: { TitleBar, Menu },
+  components: { TitleBar, Menu, Board },
 };
 </script>
 

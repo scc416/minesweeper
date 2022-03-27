@@ -15,6 +15,6 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0.1em 0.1em;
+  box-shadow: 0.1em 0.1em #10101d;
 }
 </style>
