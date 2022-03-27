@@ -7,7 +7,7 @@
 
 <script>
 import Title from "./Title.vue";
-import Buttons from "./Button.vue";
+import Buttons from "./Buttons.vue";
 
 export default { components: { Title, Buttons } };
 </script>
