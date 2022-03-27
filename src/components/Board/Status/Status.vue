@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Score />
+    <NumberBoard number="161" />
     <Emoji />
-    <Score />
+    <NumberBoard number="000" />
   </div>
 </template>
 
 <script>
-import Score from "./Score.vue";
+import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
 
-export default { components: { Score, Emoji } };
+export default { components: { NumberBoard, Emoji } };
 </script>
 
 <style scoped>

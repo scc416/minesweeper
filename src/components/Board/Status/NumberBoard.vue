@@ -1,11 +1,13 @@
 <template>
   <span>
-    <div>013</div>
+    <div>
+      {{ number }}
+    </div>
   </span>
 </template>
 
 <script>
-export default {};
+export default { props: ["number"] };
 </script>
 
 <style scoped>
