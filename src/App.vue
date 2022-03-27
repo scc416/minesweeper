@@ -1,12 +1,12 @@
 <template>
-  <Title />
+  <TitleBar />
 </template>
 
 <script>
-import Title from "./components/Title.vue";
+import TitleBar from "./components/TitleBar.vue";
 
 export default {
-  components: { Title },
+  components: { TitleBar },
 };
 </script>
 
