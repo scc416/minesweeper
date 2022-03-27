@@ -17,6 +17,7 @@ b {
   position: relative;
   bottom: 0.17em;
   font-weight: 800;
+  font-size: 0.9em;
 }
 
 span {
