@@ -1,5 +1,5 @@
 <template>
-  <div><img src="../public/favicon.png" />Minesewwper</div>
+  <div><img src="../public/favicon.png" />Minesweeper</div>
 </template>
 
 <script>
@@ -15,6 +15,7 @@ html {
   background-size: cover;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans";
 }
 
 body {
@@ -25,6 +26,10 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+#app {
+  background: #eeeeee;
 }
 
 * {
