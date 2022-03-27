@@ -10,7 +10,10 @@ export default {};
 div {
   height: 1.5em;
   width: 1.5em;
-  border: #707070 solid 0.09em;
+  border-left: #eeeeee solid 0.12em;
+  border-top: #eeeeee solid 0.12em;
+  border-right: #000 solid 0.12em;
+  border-bottom: #000 solid 0.12em;
   background: #c0c0c0;
 }
 </style>
