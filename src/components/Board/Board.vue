@@ -13,6 +13,6 @@ div {
   border-top: #eeeeee solid 0.22em;
   border-bottom: #707070 solid 0.22em;
   border-right: #707070 solid 0.22em;
-  padding: 0.3em
+  padding: 0.3em;
 }
 </style>
