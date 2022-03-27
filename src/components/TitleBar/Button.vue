@@ -1,9 +1,9 @@
 <template>
-  <span>{{ symbol }}</span>
+  <span><slot /></span>
 </template>
 
 <script>
-export default { props: ["symbol"] };
+export default {};
 </script>
 
 <style scoped>
