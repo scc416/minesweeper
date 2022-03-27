@@ -9,7 +9,12 @@ export default { props: ["symbol"] };
 <style scoped>
 span {
   background: #bebebe;
-  width: 1em;
-  height: 1em;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0.1em 0.1em 0.1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
 }
 </style>

@@ -17,5 +17,6 @@ div {
   display: flex;
   justify-content: space-between;
   background: #00007b;
+  align-items: center;
 }
 </style>

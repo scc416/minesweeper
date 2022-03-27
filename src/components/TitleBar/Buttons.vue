@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Button />
-    <Button />
-    <Button symbol="×" />
+    <Button symbol="_" />
+    <Button symbol="🗕" />
+    <Button symbol="✕" />
   </div>
 </template>
 
