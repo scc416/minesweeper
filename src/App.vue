@@ -35,6 +35,7 @@ body {
 #app {
   background: #eeeeee;
   padding: 0.22em;
+  min-width: 15em;
 }
 
 * {

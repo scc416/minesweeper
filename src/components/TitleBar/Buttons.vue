@@ -22,4 +22,8 @@ b {
 span {
   font-size: 1.5em;
 }
+
+* {
+  font-size: 0.8em;
+}
 </style>

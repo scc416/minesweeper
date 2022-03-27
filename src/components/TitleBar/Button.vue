@@ -9,12 +9,12 @@ export default {};
 <style scoped>
 span {
   background: #bebebe;
-  width: 1.2em;
-  height: 1.2em;
-  margin: 0.1em 0.1em 0.1em 0;
+  width: 1em;
+  height: 1em;
+  margin: 0.15em 0.15em 0.15em 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3em;
+  box-shadow: 0.1em 0.1em;
 }
 </style>
