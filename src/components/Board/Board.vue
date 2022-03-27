@@ -9,7 +9,18 @@
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 
-export default { components: { Status, Game } };
+export default {
+  components: { Status, Game },
+  data() {
+    return {
+      state: 0,
+      startTime: null,
+      clicked: [],
+      labelledBombs: [],
+      bombs: [],
+    };
+  },
+};
 </script>
 
 <style scoped>
