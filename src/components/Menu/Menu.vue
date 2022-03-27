@@ -1,9 +1,14 @@
 <template>
-  <div><span>Game</span><span>Help</span></div>
+  <div>
+    <Button text="Game" />
+    <Button text="Help" />
+  </div>
 </template>
 
 <script>
-export default {};
+import Button from "./Button.vue";
+
+export default { components: { Button } };
 </script>
 
 <style scoped>
