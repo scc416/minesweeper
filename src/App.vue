@@ -1,9 +1,13 @@
 <template>
-  <div><img src="../public/favicon.png" />Minesweeper</div>
+  <Title />
 </template>
 
 <script>
-export default {};
+import Title from "./components/Title.vue";
+
+export default {
+  components: { Title },
+};
 </script>
 
 <style>
@@ -30,6 +34,7 @@ body {
 
 #app {
   background: #eeeeee;
+  padding: 0.2em;
 }
 
 * {
