@@ -15,7 +15,7 @@ export default { components: { Button } };
 div {
   background: #bdbdbd;
   border-top: #eeeeee solid 0.16em;
-  padding: 0.2em 0;
+  padding: 0.14em 0;
   font-size: 0.9em;
 }
 </style>
