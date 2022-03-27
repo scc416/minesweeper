@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TitleBar from "./components/TitleBar.vue";
+import TitleBar from "./components/TitleBar/index.vue";
 
 export default {
   components: { TitleBar },
