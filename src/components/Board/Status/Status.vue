@@ -1,14 +1,16 @@
 <template>
   <div>
     <Score />
+    <Emoji />
     <Score />
   </div>
 </template>
 
 <script>
 import Score from "./Score.vue";
+import Emoji from "./Emoji.vue";
 
-export default { components: { Score } };
+export default { components: { Score, Emoji } };
 </script>
 
 <style scoped>
