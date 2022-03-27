@@ -15,5 +15,6 @@ div {
   border-right: #ffffff solid 0.12em;
   padding: 0.45em 0.35em 0.35em 0.35em;
   margin-bottom: 0.42em;
+  font-family: "VT323";
 }
 </style>
