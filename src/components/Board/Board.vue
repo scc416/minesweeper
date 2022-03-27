@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Status from "./Status.vue";
-import Game from "./Game.vue";
+import Status from "./Status/Status.vue";
+import Game from "./Game/Game.vue";
 
 export default { components: { Status, Game } };
 </script>
