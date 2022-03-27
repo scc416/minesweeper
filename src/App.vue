@@ -38,8 +38,11 @@ body {
 }
 
 #app {
-  background: #eeeeee;
-  padding: 0.22em;
+  background: #bdbdbd;
+  border-top: #eeeeee solid 0.22em;
+  border-left: #eeeeee solid 0.22em;
+  border-right: #9f9f9f solid 0.22em;
+  border-bottom: #9f9f9f solid 0.22em;
   min-width: 15em;
 }
 

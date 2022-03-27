@@ -16,9 +16,9 @@ export default { components: { Status, Game } };
 div.board {
   background: #bebebe;
   border-left: #eeeeee solid 0.18em;
-  border-top: #eeeeee solid 0.18em;
+  border-top: #eeeeee solid 0.26em;
   border-bottom: #707070 solid 0.18em;
   border-right: #707070 solid 0.18em;
-  padding: 0.3em;
+  padding: 0.45em 0.35em 0.35em 0.35em;
 }
 </style>
