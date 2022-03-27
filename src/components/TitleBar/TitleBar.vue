@@ -1,9 +1,6 @@
 <template>
   <div class="title-bar">
-    <div class="title">
-      <img src="../../../public/favicon.png" />
-      <span>Minesweeper</span>
-    </div>
+    <Title />
     <div class="buttons">
       <div></div>
       <div></div>
@@ -13,25 +10,15 @@
 </template>
 
 <script>
-export default {};
+import Title from "./Title.vue";
+
+export default { components: { Title } };
 </script>
 
 <style scoped>
 .title-bar {
   display: flex;
   justify-content: space-between;
-}
-
-div.title {
-  display: flex;
-  align-items: center;
-  background: #00007b;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-img {
-  height: 1.5em;
 }
 
 div.class > * {
