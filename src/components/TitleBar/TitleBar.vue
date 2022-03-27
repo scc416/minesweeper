@@ -1,35 +1,20 @@
 <template>
-  <div class="title-bar">
+  <div>
     <Title />
-    <div class="buttons">
-      <div></div>
-      <div></div>
-      <div>×</div>
-    </div>
+    <Buttons />
   </div>
 </template>
 
 <script>
 import Title from "./Title.vue";
+import Buttons from "./Button.vue";
 
-export default { components: { Title } };
+export default { components: { Title, Buttons } };
 </script>
 
 <style scoped>
-.title-bar {
+div {
   display: flex;
   justify-content: space-between;
-}
-
-div.class > * {
-  padding: 0.05em 0.01em 0.05em 0.08em;
-}
-
-.buttons {
-  display: flex;
-}
-
-.buttons > * {
-  background: #bebebe;
 }
 </style>

@@ -1,13 +1,21 @@
 <template>
-  
+  <div>
+    <span></span>
+    <span></span>
+    <span>×</span>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
+<style scoped>
+div {
+  display: flex;
+}
 
+span {
+  background: #bebebe;
+}
 </style>
