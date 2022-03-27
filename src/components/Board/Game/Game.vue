@@ -1,7 +1,7 @@
 <template>
   <div class="game">
-    <div v-for="row in coordinates" class="row">
-      <Coordinate v-for="column in row" />
+    <div v-for="row in coordinates" :key="row[0]" class="row">
+      <Coordinate v-for="column in row" :key="`${row[0]}${column}`" />
     </div>
   </div>
 </template>
