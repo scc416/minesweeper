@@ -1,7 +1,11 @@
 <template>
   <div class="game">
-    <div v-for="row in coordinates" :key="row[0]" class="row">
-      <Coordinate v-for="column in row" :key="`${row[0]}${column}`" />
+    <div v-for="row in num" :key="row" class="row">
+      <Coordinate
+        v-for="col in num"
+        :key="`${row}-${col}`"
+        :click="() => click({ row, col })"
+      />
     </div>
   </div>
 </template>
@@ -10,18 +14,10 @@
 import Coordinate from "./Coordinate.vue";
 
 export default {
+  props: ["click"],
   data() {
     return {
-      coordinates: [
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 1, 1, 1, 1, 1, 1],
-        [2, 2, 2, 2, 2, 2, 2, 2],
-        [3, 3, 3, 3, 3, 3, 3, 3],
-        [4, 0, 0, 0, 0, 0, 0, 0],
-        [5, 0, 0, 0, 0, 0, 0, 0],
-        [6, 0, 0, 0, 0, 0, 0, 0],
-        [7, 0, 0, 0, 0, 0, 0, 0],
-      ],
+      num: [0, 1, 2, 3, 4, 5, 6, 7],
     };
   },
   components: { Coordinate },

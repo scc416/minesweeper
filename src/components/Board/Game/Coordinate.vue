@@ -1,9 +1,9 @@
 <template>
-  <div></div>
+  <div @click="click"></div>
 </template>
 
 <script>
-export default {};
+export default { props: ["click"] };
 </script>
 
 <style scoped>

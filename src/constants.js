@@ -4,3 +4,5 @@ export const initState = {
   labelledBombs: [],
   bombs: [],
 };
+
+export const numOfBomb = 10;
