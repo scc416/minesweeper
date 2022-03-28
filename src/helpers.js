@@ -180,11 +180,21 @@ export const getAdjacentBombNumWithState = (bombs, coordinate) => {
 const addIfNotAdded = (arr, elm) => {
   const isAdded = isInArray(arr, elm);
   if (!isAdded) arr.push(elm);
+  return isAdded;
 };
 
-// export const addToClick = (bombs, coordinate, clicked) => {
-//   const length = clicked.length;
-//   addIfNotAdded(clicked, coordinate);
-//   for (const cood of clicked) {
-//   }
-// };
+export const addToClicked = (bombs, coordinate, clicked) => {
+  const isBomb = isInArray(bombs, coordinate);
+  if (isBomb) return clicked.push(coordinate);
+
+  const isAdded = addIfNotAdded(clicked, coordinate);
+  if (isAdded) return;
+
+  const numOfAdjacentBombs = getAdjacentBombNum(bombs, coordinate);
+  if (!numOfAdjacentBombs) {
+    const adjacent = getAdjacentCoordinate(coordinate);
+    for (const adCoord of adjacent) {
+      addToClicked(bombs, adCoord, clicked);
+    }
+  }
+};

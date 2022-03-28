@@ -35,6 +35,7 @@ import {
   getGameState,
   getCoordinateState,
   getAdjacentBombNumWithState,
+  addToClicked,
 } from "../../helpers";
 
 export default {
@@ -79,7 +80,9 @@ export default {
         this.flagged,
         coordinate
       );
-      if (!isClicked && !isFlagged) this.clicked.push(coordinate);
+      if (!isClicked && !isFlagged) {
+        addToClicked(this.bombs, coordinate, this.clicked);
+      }
     },
     rightClick(coordinate) {
       return (e) => {
