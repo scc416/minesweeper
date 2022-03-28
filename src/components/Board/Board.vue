@@ -1,6 +1,11 @@
 <template>
   <div class="board">
-    <Status :newGame="newGame" :startTime="startTime" :flagged="flagged" />
+    <Status
+      :newGame="newGame"
+      :startTime="startTime"
+      :gameOn="gameOn"
+      :flagged="flagged"
+    />
     <Game
       :click="click"
       :rightClick="rightClick"
@@ -86,6 +91,9 @@ export default {
         this.bombs,
         this.numOfCoordinateToBeFound
       );
+    },
+    gameOn() {
+      return this.gameState === GAME_ON;
     },
   },
 };

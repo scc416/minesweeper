@@ -13,7 +13,7 @@ import { updateTimer, calculateBombsLeft } from "../../../helpers";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "startTime", "flagged"],
+  props: ["newGame", "startTime", "flagged", "gameOn"],
   data() {
     return {
       timer: 0,
@@ -26,7 +26,7 @@ export default {
   },
   mounted() {
     const timeInterval = setInterval(() => {
-      this.timer = updateTimer(this.startTime);
+      if (this.gameOn) this.timer = updateTimer(this.startTime);
     }, 100);
     return () => clearInterval(timeInterval);
   },
