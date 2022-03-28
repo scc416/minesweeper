@@ -3,6 +3,7 @@ export const initState = {
   clicked: [],
   labelledBombs: [],
   bombs: [],
+  bombsLeft: 0,
 };
 
 export const numOfBomb = 10;

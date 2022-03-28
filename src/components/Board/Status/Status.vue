@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NumberBoard number="161" />
+    <NumberBoard :number="bombsLeft" />
     <Emoji :newGame="newGame" />
     <NumberBoard :number="timer" />
   </div>
@@ -12,7 +12,7 @@ import Emoji from "./Emoji.vue";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "startTime"],
+  props: ["newGame", "startTime", "bombsLeft"],
   data() {
     return {
       timer: 0,
@@ -28,7 +28,6 @@ export default {
 
       if (!this.startTime) this.timer = 0;
     }, 10);
-
     return () => clearInterval(timeInterval);
   },
 };
