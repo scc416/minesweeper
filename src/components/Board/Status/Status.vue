@@ -1,7 +1,7 @@
 <template>
   <div>
     <NumberBoard :number="bombsLeft" />
-    <Emoji :newGame="newGame" :gameState="gameState" />
+    <Emoji :newGame="newGame" :gameState="gameState" :mouseDown="mouseDown" />
     <NumberBoard :number="timer" />
   </div>
 </template>
@@ -13,7 +13,7 @@ import { calculateBombsLeft } from "../../../helpers";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "timer", "flagged", "gameState"],
+  props: ["newGame", "timer", "flagged", "gameState", "mouseDown"],
   computed: {
     bombsLeft() {
       return calculateBombsLeft(this.timer, this.flagged);

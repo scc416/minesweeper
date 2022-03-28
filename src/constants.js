@@ -21,4 +21,5 @@ export const initState = {
   flagged: [],
   bombs: [],
   timer: 0,
+  mouseDown: false
 };

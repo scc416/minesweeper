@@ -1,15 +1,17 @@
 <template>
-  <div class="board">
+  <div class="board" @mouseup="mouseUpFn">
     <Status
       :newGame="newGame"
       :timer="timer"
       :flagged="flagged"
       :gameState="gameState"
+      :mouseDown="mouseDown"
     />
     <Game
       :click="click"
       :rightClick="rightClick"
       :getCoordinateState="getCoordinateState"
+      :mouseDownFn="mouseDownFn"
     />
   </div>
 </template>
@@ -39,6 +41,12 @@ export default {
     return initState;
   },
   methods: {
+    mouseDownFn() {
+      this.mouseDown = true;
+    },
+    mouseUpFn() {
+      this.mouseDown = false;
+    },
     getCoordinateState(coordinate) {
       return getCoordinateState(
         this.clicked,
@@ -54,6 +62,7 @@ export default {
       this.flagged = [];
       this.bombs = [];
       this.timer = 0;
+      this.mouseDown = false;
     },
     click(coordinate) {
       if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;

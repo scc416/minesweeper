@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="game" @mousedown="mouseDownFn">
     <div v-for="row in numArr" :key="row" class="row">
       <Coordinate
         v-for="col in numArr"
@@ -18,7 +18,7 @@ import { numOfRow } from "../../../constants";
 import { makeNumArr } from "../../../helpers";
 
 export default {
-  props: ["click", "rightClick", "getCoordinateState"],
+  props: ["click", "rightClick", "getCoordinateState", "mouseDownFn"],
   data() {
     return {
       numArr: makeNumArr(numOfRow),

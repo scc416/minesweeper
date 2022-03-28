@@ -6,10 +6,12 @@
 import { GAME_WIN, GAME_LOSE } from "../../../constants";
 
 export default {
-  props: ["newGame", "gameState"],
+  props: ["newGame", "gameState", "mouseDown"],
   computed: {
     iconSrc() {
-      return this.gameState === GAME_WIN
+      return this.mouseDown
+        ? require("../../../assets/emoji/suprised.png")
+        : this.gameState === GAME_WIN
         ? require("../../../assets/emoji/sunglass.png")
         : this.gameState === GAME_LOSE
         ? require("../../../assets/emoji/dead.png")
