@@ -144,3 +144,31 @@ export const getCoordinateState = (
   }
   return NONE;
 };
+
+const getAdjacentCoordinate = ({ row, col }) => {
+  const minRow = row === 0 ? row : row - 1;
+  const maxRow = row === numOfRow - 1 ? row : row + 1;
+  const minCol = col === 0 ? col : col - 1;
+  const maxCol = col === numOfRow - 1 ? col : col + 1;
+  const coordinates = [];
+  for (let i = minRow; i <= maxRow; i++) {
+    for (let j = minCol; j <= maxCol; j++) {
+      const isSame = row === i && col === j;
+      if (!isSame) {
+        const adjacent = { row: i, col: j };
+        coordinates.push(adjacent);
+      }
+    }
+  }
+  return coordinates;
+};
+
+export const getAdjacentBomb = (bombs, coordinate) => {
+  const adjacentCoordinates = getAdjacentCoordinate(coordinate);
+  let count = 0;
+  for (const adjCoordinate of adjacentCoordinates) {
+    const isBomb = isInArray(bombs, adjCoordinate);
+    if (isBomb) count++;
+  }
+  return count;
+};
