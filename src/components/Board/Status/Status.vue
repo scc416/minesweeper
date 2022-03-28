@@ -9,26 +9,15 @@
 <script>
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
-import { updateTimer, calculateBombsLeft } from "../../../helpers";
+import { calculateBombsLeft } from "../../../helpers";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "startTime", "flagged", "gameOn"],
-  data() {
-    return {
-      timer: 0,
-    };
-  },
+  props: ["newGame", "timer", "flagged"],
   computed: {
     bombsLeft() {
-      return calculateBombsLeft(this.startTime, this.flagged);
+      return calculateBombsLeft(this.timer, this.flagged);
     },
-  },
-  mounted() {
-    const timeInterval = setInterval(() => {
-      if (this.gameOn) this.timer = updateTimer(this.startTime);
-    }, 100);
-    return () => clearInterval(timeInterval);
   },
 };
 </script>

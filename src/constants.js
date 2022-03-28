@@ -22,4 +22,5 @@ export const initState = {
   flagged: [],
   bombs: [],
   numOfCoordinateToBeFound: numOfRow * numOfBomb,
+  timer: 0,
 };

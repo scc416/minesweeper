@@ -1,11 +1,6 @@
 <template>
   <div class="board">
-    <Status
-      :newGame="newGame"
-      :startTime="startTime"
-      :gameOn="gameOn"
-      :flagged="flagged"
-    />
+    <Status :newGame="newGame" :timer="timer" :flagged="flagged" />
     <Game
       :click="click"
       :rightClick="rightClick"
@@ -25,6 +20,7 @@ import {
   GAME_LOSE,
 } from "../../constants";
 import {
+  updateTimer,
   generateBombs,
   removeCoordinate,
   checkIfClickedFlagged,
@@ -52,6 +48,7 @@ export default {
       this.clicked = [];
       this.flagged = [];
       this.bombs = [];
+      this.timer = 0;
     },
     click(coordinate) {
       if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
@@ -68,9 +65,9 @@ export default {
       if (!isClicked && !isFlagged) this.clicked.push(coordinate);
     },
     rightClick(coordinate) {
-      if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
       return (e) => {
         e.preventDefault();
+        if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
         const { isClicked, isFlagged } = checkIfClickedFlagged(
           this.clicked,
           this.flagged,
@@ -92,9 +89,13 @@ export default {
         this.numOfCoordinateToBeFound
       );
     },
-    gameOn() {
-      return this.gameState === GAME_ON || this.gameState === GAME_PENDING;
-    },
+  },
+
+  mounted() {
+    const timeInterval = setInterval(() => {
+      if (this.gameState === GAME_ON) this.timer = updateTimer(this.startTime);
+    }, 100);
+    return () => clearInterval(timeInterval);
   },
 };
 </script>
