@@ -1,9 +1,8 @@
 export const initState = {
   startTime: null,
   clicked: [],
-  labelledBombs: [],
-  bombs: [],
-  bombsLeft: 0,
+  flagged: [],
+  bombs: []
 };
 
 export const numOfBomb = 10;

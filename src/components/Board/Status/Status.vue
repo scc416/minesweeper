@@ -9,15 +9,21 @@
 <script>
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
-import { updateTimer } from "../../../helpers";
+import { updateTimer, calculateBombsLeft } from "../../../helpers";
+import { numOfBomb } from "../../../constants";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "startTime", "bombsLeft"],
+  props: ["newGame", "startTime", "flagged"],
   data() {
     return {
       timer: 0,
     };
+  },
+  computed: {
+    bombsLeft() {
+      return calculateBombsLeft(this.startTime, numOfBomb, this.flagged);
+    },
   },
   mounted() {
     const timeInterval = setInterval(() => {

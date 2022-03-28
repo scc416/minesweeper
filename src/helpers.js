@@ -44,16 +44,18 @@ export const generateBombs = (firstCoordinate, numOfBomb) => {
   return bombs;
 };
 
-export const timeFormatter = (time) => {
+export const numFormatter = (time) => {
   if (time > 999) return "999";
   if (time > 99) return `${time}`;
   if (time > 9) return `0${time}`;
+  if (time < 0) return "000"
   return `00${time}`;
 };
 
 export const calculateBombsLeft = (startTime, numOfBomb, labelledBombs) => {
   if (!startTime) return 0;
-  return numOfBomb - labelledBombs.length;
+  const bombsLeft = numOfBomb - labelledBombs.length;
+  return bombsLeft;
 };
 
 export const updateTimer = (startTime) => {

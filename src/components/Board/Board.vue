@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <Status :newGame="newGame" :startTime="startTime" :bombsLeft="bombsLeft" />
+    <Status :newGame="newGame" :startTime="startTime" :flagged="flagged" />
     <Game :click="click" />
   </div>
 </template>
@@ -9,12 +9,7 @@
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import { initState, numOfBomb } from "../../constants";
-import {
-  isInArray,
-  generateBombs,
-  calculateBombsLeft,
-  // updateTimer,
-} from "../../helpers";
+import { isInArray, generateBombs, calculateBombsLeft } from "../../helpers";
 
 export default {
   components: { Status, Game },
@@ -25,9 +20,8 @@ export default {
     newGame() {
       this.startTime = null;
       this.clicked = [];
-      this.labelledBombs = [];
+      this.flagged = [];
       this.bombs = [];
-      this.bombsLeft = 0;
     },
     click(coordinate) {
       const isNewGame = !this.startTime;
@@ -38,15 +32,8 @@ export default {
 
       const alreadyClicked = isInArray(this.clicked, coordinate);
       if (!alreadyClicked) this.clicked.push(coordinate);
-
-      this.bombsLeft = calculateBombsLeft(
-        this.startTime,
-        numOfBomb,
-        this.labelledBombs
-      );
     },
   },
-
 };
 </script>
 

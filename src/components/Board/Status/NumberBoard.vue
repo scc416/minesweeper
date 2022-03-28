@@ -1,15 +1,15 @@
 <template>
   <span>
     <div>
-      {{ timeFormatter(number) }}
+      {{ numFormatter(number) }}
     </div>
   </span>
 </template>
 
 <script>
-import { timeFormatter } from "../../../helpers";
+import { numFormatter } from "../../../helpers";
 
-export default { props: ["number"], methods: { timeFormatter } };
+export default { props: ["number"], methods: { numFormatter } };
 </script>
 
 <style scoped>
