@@ -1,8 +1,8 @@
 <template>
   <div class="game">
-    <div v-for="row in num" :key="row" class="row">
+    <div v-for="row in numArr" :key="row" class="row">
       <Coordinate
-        v-for="col in num"
+        v-for="col in numArr"
         :key="`${row}-${col}`"
         :click="() => click({ row, col })"
       />
@@ -12,12 +12,13 @@
 
 <script>
 import Coordinate from "./Coordinate.vue";
+import { numArr } from "../../../constants";
 
 export default {
   props: ["click"],
   data() {
     return {
-      num: [0, 1, 2, 3, 4, 5, 6, 7],
+      numArr,
     };
   },
   components: { Coordinate },
