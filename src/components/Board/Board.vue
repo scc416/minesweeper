@@ -1,7 +1,13 @@
 <template>
   <div class="board">
     <Status :newGame="newGame" :startTime="startTime" :flagged="flagged" />
-    <Game :click="click" :rightClick="rightClick" />
+    <Game
+      :click="click"
+      :rightClick="rightClick"
+      :clicked="clicked"
+      :flagged="flagged"
+      :bombs="bombs"
+    />
   </div>
 </template>
 
