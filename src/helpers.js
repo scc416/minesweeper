@@ -9,6 +9,8 @@ import {
   CLICKED,
   FLAGGED,
   EXPLODED,
+  MINE_FILEPATH,
+  FLAG_FILEPATH,
 } from "./constants";
 
 const isSameCoordinate = (co1, co2) => {
@@ -112,7 +114,13 @@ export const getGameState = (startTime, clicked, bombs, numOfCoordinate) => {
   return GAME_ON;
 };
 
-export const getCoordinateState = (clicked, flagged, bombs, coordinate) => {
+export const getCoordinateState = (
+  clicked,
+  flagged,
+  bombs,
+  gameState,
+  coordinate
+) => {
   const { isClicked, isFlagged } = checkIfClickedFlagged(
     clicked,
     flagged,
@@ -124,4 +132,12 @@ export const getCoordinateState = (clicked, flagged, bombs, coordinate) => {
   if (isFlagged) return FLAGGED;
   if (isClicked) return CLICKED;
   return NONE;
+};
+
+export const getCoordinateIcon = (state) => {
+  return state === FLAGGED
+    ? FLAG_FILEPATH
+    : state === EXPLODED
+    ? MINE_FILEPATH
+    : "";
 };

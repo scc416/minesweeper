@@ -32,6 +32,7 @@ export default {
         this.clicked,
         this.flagged,
         this.bombs,
+        this.gameState,
         coordinate
       );
     },

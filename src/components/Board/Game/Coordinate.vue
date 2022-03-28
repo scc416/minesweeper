@@ -1,26 +1,25 @@
 <template>
   <div @click="click" @click.right="rightClick">
-    <img src="" />{{ this.state }}
+    <img :src="iconSrc" alt="" />
   </div>
 </template>
 
 <script>
-import { MINE_FILEPATH } from "../../../constants";
+import { FLAGGED, EXPLODED } from "../../../constants";
 
 export default {
   props: ["click", "rightClick", "getCoordinateState"],
-  data() {
-    return {
-      MINE_FILEPATH,
-    };
-  },
   computed: {
     state() {
       return this.getCoordinateState();
     },
-  },
-  updated() {
-    console.log(this.state);
+    iconSrc() {
+      return this.state === FLAGGED
+        ? require("../../../assets/icon/flag.png")
+        : this.state === EXPLODED
+        ? require("../../../assets/icon/mine.png")
+        : "";
+    },
   },
 };
 </script>
