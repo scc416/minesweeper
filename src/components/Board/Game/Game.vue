@@ -17,7 +17,7 @@ import { numOfRow } from "../../../constants";
 import { makeNumArr } from "../../../helpers";
 
 export default {
-  props: ["click", "rightClick"],
+  props: ["click", "rightClick", "clicked", "flagged", "bombs"],
   data() {
     return {
       numArr: makeNumArr(numOfRow),
