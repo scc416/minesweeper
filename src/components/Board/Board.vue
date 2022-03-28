@@ -24,7 +24,6 @@ export default {
   methods: {
     newGame() {
       this.startTime = null;
-      this.timer = 0;
       this.clicked = [];
       this.labelledBombs = [];
       this.bombs = [];
