@@ -1,5 +1,7 @@
 <template>
-  <div @click="click"><img src="../../../assets/mine.png" /></div>
+  <div @click="click">
+    <img src="../../../assets/mine.png" />
+  </div>
 </template>
 
 <script>
