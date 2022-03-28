@@ -1,4 +1,11 @@
-import { numOfRow, numOfBomb } from "./constants";
+import {
+  numOfRow,
+  numOfBomb,
+  GAME_PENDING,
+  GAME_ON,
+  GAME_WIN,
+  GAME_LOSE,
+} from "./constants";
 
 const isSameCoordinate = (co1, co2) => {
   const { row: row1, col: col1 } = co1;
@@ -83,4 +90,20 @@ export const checkIfClickedFlagged = (clicked, flagged, coordinate) => {
   const isClicked = isInArray(clicked, coordinate);
   const isFlagged = isInArray(flagged, coordinate);
   return { isClicked, isFlagged };
+};
+
+export const getGameState = (startTime, clicked, bombs, numOfCoordinate) => {
+  const gameStarted = startTime;
+  if (!gameStarted) return GAME_PENDING;
+
+  for (const bomb of bombs) {
+    const isClicked = isInArray(clicked, bomb);
+    if (isClicked) return GAME_LOSE;
+  }
+
+  const numOfClicked = clicked.length;
+  const allClicked = numOfClicked - numOfCoordinate === 0;
+  if (allClicked) return GAME_WIN;
+
+  return GAME_ON;
 };

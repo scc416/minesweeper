@@ -20,6 +20,7 @@ import {
   generateBombs,
   removeCoordinate,
   checkIfClickedFlagged,
+  getGameState,
 } from "../../helpers";
 
 export default {
@@ -64,19 +65,12 @@ export default {
   },
   computed: {
     gameState() {
-      const gameStarted = this.startTime;
-      if (!gameStarted) return GAME_PENDING;
-
-      for (const bomb of this.bombs) {
-        const isClicked = isInArray(this.clicked, bomb);
-        if (isClicked) return GAME_LOSE;
-      }
-
-      const numOfClicked = this.clicked.length;
-      const allClicked = numOfClicked - this.numOfCoordinateToBeFound === 0;
-      if (allClicked) return GAME_WIN;
-
-      return GAME_ON;
+      return getGameState(
+        this.startTime,
+        this.clicked,
+        this.bombs,
+        this.numOfCoordinateToBeFound
+      );
     },
   },
 };
