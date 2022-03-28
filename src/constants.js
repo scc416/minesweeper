@@ -7,3 +7,5 @@ export const initState = {
 };
 
 export const numOfBomb = 10;
+
+export const MINE_FILEPATH = "../../../assets/icon/mine.png";

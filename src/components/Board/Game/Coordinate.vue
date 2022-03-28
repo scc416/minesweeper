@@ -1,11 +1,20 @@
 <template>
   <div @click="click">
-    <img src="../../../assets/mine.png" />
+    <img src="" />
   </div>
 </template>
 
 <script>
-export default { props: ["click"] };
+import { MINE_FILEPATH } from "../../../constants";
+
+export default {
+  props: ["click"],
+  data() {
+    return {
+      MINE_FILEPATH,
+    };
+  },
+};
 </script>
 
 <style scoped>
