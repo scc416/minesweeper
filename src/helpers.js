@@ -9,8 +9,6 @@ import {
   CLICKED,
   FLAGGED,
   EXPLODED,
-  MINE_FILEPATH,
-  FLAG_FILEPATH,
   EXPLODED_OTHER,
   numOfCoordinateToBeFound,
 } from "./constants";
@@ -145,12 +143,4 @@ export const getCoordinateState = (
       if (!isBomb) return CLICKED;
   }
   return NONE;
-};
-
-export const getCoordinateIcon = (state) => {
-  return state === FLAGGED
-    ? FLAG_FILEPATH
-    : state === EXPLODED
-    ? MINE_FILEPATH
-    : "";
 };

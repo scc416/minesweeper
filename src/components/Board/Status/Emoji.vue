@@ -1,9 +1,23 @@
 <template>
-  <span @click="newGame"><img src="../../../assets/emoji/smile.png" /></span>
+  <span @click="newGame"><img :src="iconSrc" /></span>
 </template>
 
 <script>
-export default { props: ["newGame"] };
+import { GAME_PENDING, GAME_ON, GAME_WIN, GAME_LOSE } from "../../../constants";
+
+export default {
+  props: ["newGame", "gameState"],
+  computed: {
+    iconSrc() {
+      return this.gameState === GAME_WIN
+        ? require("../../../assets/emoji/sunglass.png")
+        : this.gameState === GAME_LOSE
+        ? require("../../../assets/emoji/dead.png")
+        : require("../../../assets/emoji/smile.png");
+    },
+    // export const SURPRISED_FILEPATH = "../../../assets/emoji/suprised.png";
+  },
+};
 </script>
 
 <style scoped>

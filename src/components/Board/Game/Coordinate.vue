@@ -5,13 +5,7 @@
 </template>
 
 <script>
-import {
-  FLAGGED,
-  EXPLODED,
-  EXPLODED_OTHER,
-  NONE,
-  CLICKED,
-} from "../../../constants";
+import { FLAGGED, EXPLODED, EXPLODED_OTHER, CLICKED } from "../../../constants";
 
 export default {
   props: ["click", "rightClick", "getCoordinateState"],

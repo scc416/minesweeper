@@ -2,9 +2,6 @@ export const numOfBomb = 10;
 export const numOfRow = 8;
 export const numOfCoordinateToBeFound = numOfRow * numOfRow - numOfBomb;
 
-export const MINE_FILEPATH = "../../../assets/icon/mine.png";
-export const FLAG_FILEPATH = "../../../assets/icon/flag.png";
-
 // state of the game
 export const GAME_PENDING = "GAME_PENDING";
 export const GAME_ON = "GAME_ON";
