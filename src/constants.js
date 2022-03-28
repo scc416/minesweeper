@@ -3,6 +3,7 @@ export const initState = {
   clicked: [],
   flagged: [],
   bombs: [],
+  numOfCoordinateToBeFound: numOfRow * numOfBomb,
 };
 
 export const numOfBomb = 10;

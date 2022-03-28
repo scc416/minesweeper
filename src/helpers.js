@@ -1,3 +1,5 @@
+import { numOfRow } from "./constants";
+
 const isSameCoordinate = (co1, co2) => {
   const { row: row1, col: col1 } = co1;
   const { row: row2, col: col2 } = co2;
@@ -38,7 +40,7 @@ const makeRandomCoordinate = (num) => {
   return { row, col };
 };
 
-export const generateBombs = (firstCoordinate, numOfRow) => {
+export const generateBombs = (firstCoordinate) => {
   const bombs = [];
 
   for (let i = 0; i < numOfRow; i++) {

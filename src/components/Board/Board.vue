@@ -10,12 +10,10 @@ import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import {
   initState,
-  numOfRow,
   GAME_PENDING,
   GAME_ON,
   GAME_WIN,
   GAME_LOSE,
-  numOfBomb,
 } from "../../constants";
 import {
   isInArray,
@@ -27,7 +25,7 @@ import {
 export default {
   components: { Status, Game },
   data() {
-    return { ...initState, numOfCoordinateToBeFound: numOfRow * numOfBomb };
+    return initState;
   },
   methods: {
     newGame() {
@@ -40,7 +38,7 @@ export default {
       const isNewGame = !this.startTime;
       if (isNewGame) {
         this.startTime = Date.now();
-        this.bombs = generateBombs(coordinate, numOfRow);
+        this.bombs = generateBombs(coordinate);
       }
       const { isClicked, isFlagged } = checkIfClickedFlagged(
         this.clicked,
