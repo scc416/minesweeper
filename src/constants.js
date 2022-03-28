@@ -15,6 +15,7 @@ export const NONE = "NONE";
 export const CLICKED = "CLICKED";
 export const FLAGGED = "FLAGGED";
 export const EXPLODED = "EXPLODED";
+export const EXPLODED_OTHER = "EXPLODED_OTHER";
 
 export const initState = {
   startTime: null,

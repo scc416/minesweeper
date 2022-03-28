@@ -67,6 +67,12 @@ export default {
     rightClick(coordinate) {
       return (e) => {
         e.preventDefault();
+        const isNewGame = !this.startTime;
+        if (isNewGame) {
+          this.startTime = Date.now();
+          this.bombs = generateBombs(coordinate);
+        }
+
         if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
         const { isClicked, isFlagged } = checkIfClickedFlagged(
           this.clicked,

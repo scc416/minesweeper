@@ -11,6 +11,7 @@ import {
   EXPLODED,
   MINE_FILEPATH,
   FLAG_FILEPATH,
+  EXPLODED_OTHER,
 } from "./constants";
 
 const isSameCoordinate = (co1, co2) => {
@@ -128,9 +129,21 @@ export const getCoordinateState = (
   );
   const isBomb = isInArray(bombs, coordinate);
 
-  if (isBomb && isClicked) return EXPLODED;
   if (isFlagged) return FLAGGED;
-  if (isClicked) return CLICKED;
+
+  switch (gameState) {
+    case GAME_ON:
+      if (isClicked) return CLICKED;
+      break;
+    case GAME_LOSE:
+      if (isClicked && isBomb) return EXPLODED;
+      if (isClicked) return CLICKED;
+      if (isBomb) return EXPLODED_OTHER;
+      break;
+    case GAME_WIN:
+      if (isBomb) return FLAGGED;
+      return CLICKED;
+  }
   return NONE;
 };
 

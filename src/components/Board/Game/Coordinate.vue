@@ -1,11 +1,17 @@
 <template>
-  <div @click="click" @click.right="rightClick">
+  <div @click="click" @click.right="rightClick" :class="className">
     <img :src="iconSrc" alt="" />
   </div>
 </template>
 
 <script>
-import { FLAGGED, EXPLODED } from "../../../constants";
+import {
+  FLAGGED,
+  EXPLODED,
+  EXPLODED_OTHER,
+  NONE,
+  CLICKED,
+} from "../../../constants";
 
 export default {
   props: ["click", "rightClick", "getCoordinateState"],
@@ -18,6 +24,15 @@ export default {
         ? require("../../../assets/icon/flag.png")
         : this.state === EXPLODED
         ? require("../../../assets/icon/mine.png")
+        : this.state === EXPLODED_OTHER
+        ? require("../../../assets/icon/mine.png")
+        : "";
+    },
+    className() {
+      return this.state === CLICKED
+        ? "clicked"
+        : this.state === EXPLODED
+        ? "bomb"
         : "";
     },
   },
@@ -39,5 +54,13 @@ div {
 }
 img {
   height: 1em;
+}
+
+.clicked {
+  border: #000 dotted 0.12em;
+}
+
+.bomb {
+  background: red;
 }
 </style>
