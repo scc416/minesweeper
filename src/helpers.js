@@ -76,3 +76,9 @@ export const updateTimer = (startTime) => {
   const timerMilli = now - startTime;
   return Math.floor(timerMilli / 1000);
 };
+
+export const checkIfClickedFlagged = (clicked, flagged, coordinate) => {
+  const isClicked = isInArray(clicked, coordinate);
+  const isFlagged = isInArray(flagged, coordinate);
+  return { isClicked, isFlagged };
+};

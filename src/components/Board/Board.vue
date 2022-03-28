@@ -17,7 +17,12 @@ import {
   GAME_LOSE,
   numOfBomb,
 } from "../../constants";
-import { isInArray, generateBombs, removeCoordinate } from "../../helpers";
+import {
+  isInArray,
+  generateBombs,
+  removeCoordinate,
+  checkIfClickedFlagged,
+} from "../../helpers";
 
 export default {
   components: { Status, Game },
@@ -30,7 +35,6 @@ export default {
       this.clicked = [];
       this.flagged = [];
       this.bombs = [];
-      console.log(this.gameState);
     },
     click(coordinate) {
       const isNewGame = !this.startTime;
@@ -38,18 +42,23 @@ export default {
         this.startTime = Date.now();
         this.bombs = generateBombs(coordinate, numOfRow);
       }
-      const alreadyClicked = isInArray(this.clicked, coordinate);
-      if (!alreadyClicked) this.clicked.push(coordinate);
-      console.log(this.gameState);
-      console.log(this.clicked);
-      console.log(this.bombs);
+      const { isClicked, isFlagged } = checkIfClickedFlagged(
+        this.clicked,
+        this.flagged,
+        coordinate
+      );
+      if (!isClicked && !isFlagged) this.clicked.push(coordinate);
     },
     rightClick(coordinate) {
       return (e) => {
         e.preventDefault();
-        const alreadyFlagged = isInArray(this.flagged, coordinate);
-        if (!alreadyFlagged) this.flagged.push(coordinate);
-        if (alreadyFlagged) {
+        const { isClicked, isFlagged } = checkIfClickedFlagged(
+          this.clicked,
+          this.flagged,
+          coordinate
+        );
+        if (!isFlagged && !isClicked) this.flagged.push(coordinate);
+        if (isFlagged) {
           this.flagged = removeCoordinate(this.flagged, coordinate);
         }
       };
