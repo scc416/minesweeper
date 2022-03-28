@@ -36,6 +36,7 @@ import {
 } from "../../helpers";
 
 export default {
+  props: ["mouseUpActivity"],
   components: { Status, Game },
   data() {
     return initState;
@@ -105,12 +106,16 @@ export default {
       return getGameState(this.startTime, this.clicked, this.bombs);
     },
   },
-
   mounted() {
     const timeInterval = setInterval(() => {
       if (this.gameState === GAME_ON) this.timer = updateTimer(this.startTime);
     }, 100);
     return () => clearInterval(timeInterval);
+  },
+  watch: {
+    mouseUpActivity() {
+      this.mouseUpFn();
+    },
   },
 };
 </script>

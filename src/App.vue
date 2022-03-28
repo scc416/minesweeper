@@ -1,9 +1,9 @@
 <template>
-  <div class="cover">
+  <div class="cover" @mouseup="mouseUp">
     <div class="game">
       <TitleBar />
       <Menu />
-      <Board />
+      <Board :mouseUpActivity="mouseUpCount" />
     </div>
   </div>
 </template>
@@ -15,6 +15,16 @@ import Board from "./components/Board/Board.vue";
 
 export default {
   components: { TitleBar, Menu, Board },
+  data() {
+    return {
+      mouseUpCount: 0,
+    };
+  },
+  methods: {
+    mouseUp() {
+      this.mouseUpCount++;
+    },
+  },
 };
 </script>
 
