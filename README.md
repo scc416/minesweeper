@@ -1,14 +1,5 @@
 # minesweeper
 
-## data
-
-### State
-
-- 0: Game is not started
-- 1: Game has started
-- 2: Player won
-- 3: Player lose
-
 ## Credits
 
 - [Favicon](https://www.mobygames.com/game/windows/minesweeper/screenshots/gameShotId,257011/) from [MobyGames](https://www.mobygames.com/)
