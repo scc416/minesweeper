@@ -1,5 +1,5 @@
 <template>
-  <div @click="click"></div>
+  <div @click="click"><img src="../../../assets/mine.png" /></div>
 </template>
 
 <script>
@@ -15,5 +15,11 @@ div {
   border-right: #000 solid 0.12em;
   border-bottom: #000 solid 0.12em;
   background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  height: 1em;
 }
 </style>
