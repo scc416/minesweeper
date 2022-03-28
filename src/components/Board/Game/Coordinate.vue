@@ -55,6 +55,6 @@ img {
 }
 
 .bomb {
-  background: red;
+  background: #fb0400;
 }
 </style>
