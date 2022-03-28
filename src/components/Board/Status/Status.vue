@@ -9,10 +9,22 @@
 <script>
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
+import { updateTimer } from "../../../helpers";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "timer", "bombsLeft"],
+  props: ["newGame", "startTime", "bombsLeft"],
+  data() {
+    return {
+      timer: 0,
+    };
+  },
+  mounted() {
+    const timeInterval = setInterval(() => {
+      this.timer = updateTimer(this.startTime);
+    }, 10);
+    return () => clearInterval(timeInterval);
+  },
 };
 </script>
 

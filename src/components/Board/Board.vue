@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <Status :newGame="newGame" :timer="timer" :bombsLeft="bombsLeft" />
+    <Status :newGame="newGame" :startTime="startTime" :bombsLeft="bombsLeft" />
     <Game :click="click" />
   </div>
 </template>
@@ -13,7 +13,7 @@ import {
   isInArray,
   generateBombs,
   calculateBombsLeft,
-  updateTimer,
+  // updateTimer,
 } from "../../helpers";
 
 export default {
@@ -47,12 +47,7 @@ export default {
       );
     },
   },
-  mounted() {
-    const timeInterval = setInterval(() => {
-      this.timer = updateTimer(this.startTime);
-    }, 10);
-    return () => clearInterval(timeInterval);
-  },
+
 };
 </script>
 
