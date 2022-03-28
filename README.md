@@ -1,5 +1,11 @@
 # minesweeper
 
+## state
+
+### state of game
+
+### state of coordinate
+
 ## Credits
 
 - [Favicon](https://www.mobygames.com/game/windows/minesweeper/screenshots/gameShotId,257011/) from [MobyGames](https://www.mobygames.com/)
