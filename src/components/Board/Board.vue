@@ -20,13 +20,7 @@
 <script>
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
-import {
-  initState,
-  GAME_PENDING,
-  GAME_ON,
-  GAME_WIN,
-  GAME_LOSE,
-} from "../../constants";
+import { initState, GAME_ON, GAME_WIN, GAME_LOSE } from "../../constants";
 import {
   updateTimer,
   generateBombs,
