@@ -1,5 +1,3 @@
-import { numOfBomb } from "./constants";
-
 const isSameCoordinate = (co1, co2) => {
   const { row: row1, col: col1 } = co1;
   const { row: row2, col: col2 } = co2;
