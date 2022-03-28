@@ -6,6 +6,7 @@
         :key="`${row}-${col}`"
         :rightClick="rightClick({ row, col })"
         :click="() => click({ row, col })"
+        :getCoordinateState="() => getCoordinateState({ row, col })"
       />
     </div>
   </div>
@@ -17,7 +18,7 @@ import { numOfRow } from "../../../constants";
 import { makeNumArr } from "../../../helpers";
 
 export default {
-  props: ["click", "rightClick", "clicked", "flagged", "bombs"],
+  props: ["click", "rightClick", "getCoordinateState"],
   data() {
     return {
       numArr: makeNumArr(numOfRow),

@@ -1,6 +1,6 @@
 <template>
   <div @click="click" @click.right="rightClick">
-    <img src="" />
+    <img src="" />{{ this.state }}
   </div>
 </template>
 
@@ -8,11 +8,19 @@
 import { MINE_FILEPATH } from "../../../constants";
 
 export default {
-  props: ["click", "rightClick"],
+  props: ["click", "rightClick", "getCoordinateState"],
   data() {
     return {
       MINE_FILEPATH,
     };
+  },
+  computed: {
+    state() {
+      return this.getCoordinateState();
+    },
+  },
+  updated() {
+    console.log(this.state);
   },
 };
 </script>

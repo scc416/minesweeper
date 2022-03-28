@@ -4,9 +4,7 @@
     <Game
       :click="click"
       :rightClick="rightClick"
-      :clicked="clicked"
-      :flagged="flagged"
-      :bombs="bombs"
+      :getCoordinateState="getCoordinateState"
     />
   </div>
 </template>
@@ -20,6 +18,7 @@ import {
   removeCoordinate,
   checkIfClickedFlagged,
   getGameState,
+  getCoordinateState,
 } from "../../helpers";
 
 export default {
@@ -28,6 +27,14 @@ export default {
     return initState;
   },
   methods: {
+    getCoordinateState(coordinate) {
+      return getCoordinateState(
+        this.clicked,
+        this.flagged,
+        this.bombs,
+        coordinate
+      );
+    },
     newGame() {
       this.startTime = null;
       this.clicked = [];
