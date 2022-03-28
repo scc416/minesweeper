@@ -129,19 +129,13 @@ export const getCoordinateState = (
   const isBomb = isInArray(bombs, coordinate);
 
   switch (gameState) {
-    case GAME_ON:
-      if (isClicked) return CLICKED;
-      if (isFlagged) return FLAGGED;
-      break;
     case GAME_LOSE:
-      if (isClicked && isBomb) return EXPLODED;
-      if (isClicked) return CLICKED;
-      if (isBomb) return EXPLODED_OTHER;
-      break;
     case GAME_WIN:
-      if (isFlagged) return FLAGGED;
-      if (!isBomb) return CLICKED;
+      if (isClicked && isBomb) return EXPLODED;
+      if (isBomb) return EXPLODED_OTHER;
   }
+  if (isFlagged) return FLAGGED;
+  if (isClicked) return CLICKED;
   return NONE;
 };
 
