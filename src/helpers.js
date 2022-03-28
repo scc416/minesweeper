@@ -1,4 +1,4 @@
-import { numOfRow } from "./constants";
+import { numOfRow, numOfBomb } from "./constants";
 
 const isSameCoordinate = (co1, co2) => {
   const { row: row1, col: col1 } = co1;
@@ -66,7 +66,7 @@ export const numFormatter = (time) => {
   return `00${time}`;
 };
 
-export const calculateBombsLeft = (startTime, numOfBomb, labelledBombs) => {
+export const calculateBombsLeft = (startTime, labelledBombs) => {
   if (!startTime) return 0;
   const bombsLeft = numOfBomb - labelledBombs.length;
   return bombsLeft;

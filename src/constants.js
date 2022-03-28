@@ -1,11 +1,3 @@
-export const initState = {
-  startTime: null,
-  clicked: [],
-  flagged: [],
-  bombs: [],
-  numOfCoordinateToBeFound: numOfRow * numOfBomb,
-};
-
 export const numOfBomb = 10;
 
 export const MINE_FILEPATH = "../../../assets/icon/mine.png";
@@ -16,3 +8,11 @@ export const GAME_PENDING = "GAME_PENDING";
 export const GAME_ON = "GAME_ON";
 export const GAME_WIN = "GAME_WIN";
 export const GAME_LOSE = "GAME_LOSE";
+
+export const initState = {
+  startTime: null,
+  clicked: [],
+  flagged: [],
+  bombs: [],
+  numOfCoordinateToBeFound: numOfRow * numOfBomb,
+};

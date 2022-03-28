@@ -10,7 +10,6 @@
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
 import { updateTimer, calculateBombsLeft } from "../../../helpers";
-import { numOfBomb } from "../../../constants";
 
 export default {
   components: { NumberBoard, Emoji },
@@ -22,7 +21,7 @@ export default {
   },
   computed: {
     bombsLeft() {
-      return calculateBombsLeft(this.startTime, numOfBomb, this.flagged);
+      return calculateBombsLeft(this.startTime, this.flagged);
     },
   },
   mounted() {
