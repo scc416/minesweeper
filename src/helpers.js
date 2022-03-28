@@ -157,7 +157,7 @@ const getAdjacentCoordinate = ({ row, col }) => {
   return coordinates;
 };
 
-export const getAdjacentBomb = (bombs, coordinate) => {
+export const getAdjacentBombNum = (bombs, coordinate) => {
   const adjacentCoordinates = getAdjacentCoordinate(coordinate);
   let count = 0;
   for (const adjCoordinate of adjacentCoordinates) {
@@ -166,3 +166,25 @@ export const getAdjacentBomb = (bombs, coordinate) => {
   }
   return count;
 };
+
+export const getAdjacentBombNumWithState = (bombs, coordinate) => {
+  return (state) => {
+    const isClicked = state === CLICKED;
+    if (!isClicked) return null;
+    const count = getAdjacentBombNum(bombs, coordinate);
+    if (count > 0) return count;
+    return null;
+  };
+};
+
+const addIfNotAdded = (arr, elm) => {
+  const isAdded = isInArray(arr, elm);
+  if (!isAdded) arr.push(elm);
+};
+
+// export const addToClick = (bombs, coordinate, clicked) => {
+//   const length = clicked.length;
+//   addIfNotAdded(clicked, coordinate);
+//   for (const cood of clicked) {
+//   }
+// };

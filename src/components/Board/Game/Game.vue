@@ -7,6 +7,7 @@
         :rightClick="rightClick({ row, col })"
         :click="() => click({ row, col })"
         :getCoordinateState="() => getCoordinateState({ row, col })"
+        :getAdjacentBombs="getAdjacentBombs({ row, col })"
       />
     </div>
   </div>
@@ -18,7 +19,13 @@ import { numOfRow } from "../../../constants";
 import { makeNumArr } from "../../../helpers";
 
 export default {
-  props: ["click", "rightClick", "getCoordinateState", "mouseDownFn"],
+  props: [
+    "click",
+    "rightClick",
+    "getCoordinateState",
+    "mouseDownFn",
+    "getAdjacentBombs",
+  ],
   data() {
     return {
       numArr: makeNumArr(numOfRow),

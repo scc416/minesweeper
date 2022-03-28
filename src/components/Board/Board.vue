@@ -12,6 +12,7 @@
       :rightClick="rightClick"
       :getCoordinateState="getCoordinateState"
       :mouseDownFn="mouseDownFn"
+      :getAdjacentBombs="getAdjacentBombs"
     />
   </div>
 </template>
@@ -33,6 +34,7 @@ import {
   checkIfClickedFlagged,
   getGameState,
   getCoordinateState,
+  getAdjacentBombNumWithState,
 } from "../../helpers";
 
 export default {
@@ -99,6 +101,9 @@ export default {
           this.flagged = removeCoordinate(this.flagged, coordinate);
         }
       };
+    },
+    getAdjacentBombs(coordinate) {
+      return getAdjacentBombNumWithState(this.bombs, coordinate);
     },
   },
   computed: {

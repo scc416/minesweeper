@@ -1,6 +1,6 @@
 <template>
   <div @click="click" @click.right="rightClick" :class="className">
-    <img :src="iconSrc" alt="" />
+    <img :src="iconSrc" alt="" />{{ numOfBombs && numOfBombs }}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { FLAGGED, EXPLODED, EXPLODED_OTHER, CLICKED } from "../../../constants";
 
 export default {
-  props: ["click", "rightClick", "getCoordinateState"],
+  props: ["click", "rightClick", "getCoordinateState", "getAdjacentBombs"],
   computed: {
     state() {
       return this.getCoordinateState();
@@ -28,6 +28,9 @@ export default {
         : this.state === EXPLODED
         ? "bomb"
         : "";
+    },
+    numOfBombs() {
+      return this.getAdjacentBombs(this.state);
     },
   },
 };
