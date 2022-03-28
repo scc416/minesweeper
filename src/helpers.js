@@ -43,3 +43,10 @@ export const generateBombs = (firstCoordinate, numOfBomb) => {
 
   return bombs;
 };
+
+export const timeFormatter = (time) => {
+  if (time > 999) return "999";
+  if (time > 99) return `${time}`;
+  if (time > 9) return `0${time}`;
+  return `00${time}`;
+};

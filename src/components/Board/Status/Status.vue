@@ -2,7 +2,7 @@
   <div>
     <NumberBoard number="161" />
     <Emoji :newGame="newGame" />
-    <NumberBoard number="000" />
+    <NumberBoard :number="timer" />
   </div>
 </template>
 
@@ -12,7 +12,25 @@ import Emoji from "./Emoji.vue";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame"],
+  props: ["newGame", "startTime"],
+  data() {
+    return {
+      timer: 0,
+    };
+  },
+  mounted() {
+    const timeInterval = setInterval(() => {
+      const now = Date.now();
+      if (this.startTime) {
+        const timerMilli = now - this.startTime;
+        this.timer = Math.floor(timerMilli / 1000);
+      }
+
+      if (!this.startTime) this.timer = 0;
+    }, 10);
+
+    return () => clearInterval(timeInterval);
+  },
 };
 </script>
 

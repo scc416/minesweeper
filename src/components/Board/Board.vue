@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <Status :newGame="newGame" />
+    <Status :newGame="newGame" :startTime="startTime" />
     <Game :click="click" />
   </div>
 </template>
@@ -24,7 +24,6 @@ export default {
       this.bombs = [];
     },
     click(coordinate) {
-      console.log(coordinate);
       const isNewGame = !this.startTime;
       if (isNewGame) {
         this.startTime = Date.now();
