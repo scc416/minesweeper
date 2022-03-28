@@ -1,7 +1,11 @@
 <template>
-  <TitleBar />
-  <Menu />
-  <Board />
+  <div class="cover">
+    <div class="game">
+      <TitleBar />
+      <Menu />
+      <Board />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -27,7 +31,8 @@ html {
   user-select: none;
 }
 
-body {
+body,
+.cover {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +42,7 @@ body {
   padding: 0;
 }
 
-#app {
+.game {
   background: #bdbdbd;
   border-top: #eeeeee solid 0.22em;
   border-left: #eeeeee solid 0.22em;
