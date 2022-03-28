@@ -9,7 +9,12 @@
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import { initState, numOfBomb } from "../../constants";
-import { isInArray, generateBombs, calculateBombsLeft } from "../../helpers";
+import {
+  isInArray,
+  generateBombs,
+  calculateBombsLeft,
+  updateTimer,
+} from "../../helpers";
 
 export default {
   components: { Status, Game },
@@ -44,12 +49,7 @@ export default {
   },
   mounted() {
     const timeInterval = setInterval(() => {
-      const now = Date.now();
-      if (this.startTime) {
-        const timerMilli = now - this.startTime;
-        this.timer = Math.floor(timerMilli / 1000);
-      }
-      if (!this.startTime) this.timer = 0;
+      this.timer = updateTimer(this.startTime);
     }, 10);
     return () => clearInterval(timeInterval);
   },

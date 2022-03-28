@@ -55,3 +55,10 @@ export const calculateBombsLeft = (startTime, numOfBomb, labelledBombs) => {
   if (!startTime) return 0;
   return numOfBomb - labelledBombs.length;
 };
+
+export const updateTimer = (startTime) => {
+  if (!startTime) return 0;
+  const now = Date.now();
+  const timerMilli = now - startTime;
+  return Math.floor(timerMilli / 1000);
+};
