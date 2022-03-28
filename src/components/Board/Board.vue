@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <Status />
+    <Status :newGame="newGame" />
     <Game />
   </div>
 </template>
@@ -14,6 +14,15 @@ export default {
   components: { Status, Game },
   data() {
     return initState;
+  },
+  methods: {
+    newGame() {
+      this.startTime = null;
+      this.clicked = [];
+      this.labelledBombs = [];
+      this.bombs = [];
+      console.log("NEW GAME");
+    },
   },
 };
 </script>

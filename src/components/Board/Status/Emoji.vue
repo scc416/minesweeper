@@ -1,9 +1,9 @@
 <template>
-  <span><img src="../../../assets/emoji/smile.png" /></span>
+  <span @click="newGame"><img src="../../../assets/emoji/smile.png" /></span>
 </template>
 
 <script>
-export default {};
+export default { props: ["newGame"] };
 </script>
 
 <style scoped>

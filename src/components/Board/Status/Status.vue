@@ -1,7 +1,7 @@
 <template>
   <div>
     <NumberBoard number="161" />
-    <Emoji />
+    <Emoji :newGame="newGame" />
     <NumberBoard number="000" />
   </div>
 </template>
@@ -10,7 +10,10 @@
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
 
-export default { components: { NumberBoard, Emoji } };
+export default {
+  components: { NumberBoard, Emoji },
+  props: ["newGame"],
+};
 </script>
 
 <style scoped>
