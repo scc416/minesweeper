@@ -9,15 +9,14 @@ export default {
   props: ["newGame", "gameState", "mouseDown"],
   computed: {
     iconSrc() {
-      return this.mouseDown
-        ? require("../../../assets/emoji/suprised.png")
-        : this.gameState === GAME_WIN
+      return this.gameState === GAME_WIN
         ? require("../../../assets/emoji/sunglass.png")
         : this.gameState === GAME_LOSE
         ? require("../../../assets/emoji/dead.png")
+        : this.mouseDown
+        ? require("../../../assets/emoji/suprised.png")
         : require("../../../assets/emoji/smile.png");
     },
-    // export const SURPRISED_FILEPATH = "../../../assets/emoji/suprised.png";
   },
 };
 </script>
