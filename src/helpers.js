@@ -6,7 +6,7 @@ const isSameCoordinate = (co1, co2) => {
   if (sameCol && sameRow) return true;
 };
 
-export const isInArray = (arr, { co1 }) => {
+export const isInArray = (arr, co1) => {
   for (const co2 of arr) {
     const sameCoordinate = isSameCoordinate(co1, co2);
     if (sameCoordinate) return true;
@@ -32,9 +32,9 @@ export const generateBombs = (firstCoordinate, numOfBomb) => {
   for (let i = 0; i < numOfBomb; i++) {
     let coordinate = null;
     while (
-      coordinate &&
-      !isInArray(bombs, coordinate) &&
-      !isSameCoordinate(coordinate, firstCoordinate)
+      !coordinate ||
+      isInArray(bombs, coordinate) ||
+      isSameCoordinate(coordinate, firstCoordinate)
     ) {
       coordinate = makeRandomCoordinate(numOfBomb);
     }

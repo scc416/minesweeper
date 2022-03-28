@@ -24,6 +24,7 @@ export default {
       this.bombs = [];
     },
     click(coordinate) {
+      console.log(coordinate);
       const isNewGame = !this.startTime;
       if (isNewGame) {
         this.startTime = Date.now();
@@ -32,11 +33,6 @@ export default {
 
       const alreadyClicked = isInArray(this.clicked, coordinate);
       if (!alreadyClicked) this.clicked.push(coordinate);
-
-      console.log(this.startTime);
-      console.log(this.clicked);
-      console.log(this.labelledBombs);
-      console.log(this.bombs);
     },
   },
 };
