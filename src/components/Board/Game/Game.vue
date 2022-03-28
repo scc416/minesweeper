@@ -13,13 +13,14 @@
 
 <script>
 import Coordinate from "./Coordinate.vue";
-import { numArr } from "../../../constants";
+import { numOfRow } from "../../../constants";
+import { makeNumArr } from "../../../helpers";
 
 export default {
   props: ["click", "rightClick"],
   data() {
     return {
-      numArr,
+      numArr: makeNumArr(numOfRow),
     };
   },
   components: { Coordinate },

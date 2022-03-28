@@ -8,7 +8,7 @@
 <script>
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
-import { initState, numOfBomb } from "../../constants";
+import { initState, numOfRow } from "../../constants";
 import { isInArray, generateBombs, removeCoordinate } from "../../helpers";
 
 export default {
@@ -35,7 +35,7 @@ export default {
       const isNewGame = !this.startTime;
       if (isNewGame) {
         this.startTime = Date.now();
-        this.bombs = generateBombs(coordinate, numOfBomb);
+        this.bombs = generateBombs(coordinate, numOfRow);
       }
 
       const alreadyClicked = isInArray(this.clicked, coordinate);

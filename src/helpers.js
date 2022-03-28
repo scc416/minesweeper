@@ -13,6 +13,14 @@ export const isInArray = (arr, co1) => {
   }
 };
 
+export const makeNumArr = (num) => {
+  const arr = [];
+  for (let i = 0; i < num; i++) {
+    arr.push(num);
+  }
+  return arr;
+};
+
 export const removeCoordinate = (arr, co) => {
   return arr.filter((c) => !isSameCoordinate(c, co));
 };
@@ -30,17 +38,17 @@ const makeRandomCoordinate = (num) => {
   return { row, col };
 };
 
-export const generateBombs = (firstCoordinate, numOfBomb) => {
+export const generateBombs = (firstCoordinate, numOfRow) => {
   const bombs = [];
 
-  for (let i = 0; i < numOfBomb; i++) {
+  for (let i = 0; i < numOfRow; i++) {
     let coordinate = null;
     while (
       !coordinate ||
       isInArray(bombs, coordinate) ||
       isSameCoordinate(coordinate, firstCoordinate)
     ) {
-      coordinate = makeRandomCoordinate(numOfBomb);
+      coordinate = makeRandomCoordinate(numOfRow);
     }
     bombs.push(coordinate);
   }
