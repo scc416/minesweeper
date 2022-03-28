@@ -4,6 +4,11 @@
 
 ### state of game
 
+- `GAME_PENDING`
+- `GAME_ON`
+- `GAME_WIN`
+- `GAME_LOSE`
+
 ### state of coordinate
 
 ## Credits
