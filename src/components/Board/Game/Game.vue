@@ -4,6 +4,7 @@
       <Coordinate
         v-for="col in numArr"
         :key="`${row}-${col}`"
+        :rightClick="rightClick({ row, col })"
         :click="() => click({ row, col })"
       />
     </div>
@@ -15,7 +16,7 @@ import Coordinate from "./Coordinate.vue";
 import { numArr } from "../../../constants";
 
 export default {
-  props: ["click"],
+  props: ["click", "rightClick"],
   data() {
     return {
       numArr,

@@ -1,5 +1,5 @@
 <template>
-  <div @click="click">
+  <div @click="click" @click.right="rightClick">
     <img src="" />
   </div>
 </template>
@@ -8,7 +8,7 @@
 import { MINE_FILEPATH } from "../../../constants";
 
 export default {
-  props: ["click"],
+  props: ["click", "rightClick"],
   data() {
     return {
       MINE_FILEPATH,

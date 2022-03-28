@@ -1,7 +1,7 @@
 <template>
   <div class="board">
     <Status :newGame="newGame" :startTime="startTime" :flagged="flagged" />
-    <Game :click="click" />
+    <Game :click="click" :rightClick="rightClick" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import { initState, numOfBomb } from "../../constants";
-import { isInArray, generateBombs, calculateBombsLeft } from "../../helpers";
+import { isInArray, generateBombs } from "../../helpers";
 
 export default {
   components: { Status, Game },
@@ -32,6 +32,13 @@ export default {
 
       const alreadyClicked = isInArray(this.clicked, coordinate);
       if (!alreadyClicked) this.clicked.push(coordinate);
+    },
+    rightClick(coordinate) {
+      return (e) => {
+        e.preventDefault();
+        console.log(e);
+        console.log(coordinate);
+      };
     },
   },
 };
