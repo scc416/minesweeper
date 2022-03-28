@@ -9,12 +9,20 @@
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import { initState, numOfBomb } from "../../constants";
-import { isInArray, generateBombs } from "../../helpers";
+import { isInArray, generateBombs, removeCoordinate } from "../../helpers";
 
 export default {
   components: { Status, Game },
   data() {
     return { ...initState };
+  },
+  computed: {
+    isEnded() {
+      for (const bomb of this.bombs) {
+        const isClicked = isInArray(this.clicked, bomb);
+        if (isClicked) return true;
+      }
+    },
   },
   methods: {
     newGame() {
@@ -36,8 +44,11 @@ export default {
     rightClick(coordinate) {
       return (e) => {
         e.preventDefault();
-        console.log(e);
-        console.log(coordinate);
+        const alreadyFlagged = isInArray(this.flagged, coordinate);
+        if (!alreadyFlagged) this.flagged.push(coordinate);
+        if (alreadyFlagged) {
+          this.flagged = removeCoordinate(this.flagged, coordinate);
+        }
       };
     },
   },
