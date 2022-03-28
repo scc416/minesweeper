@@ -1,12 +1,10 @@
 <template>
   <div>
+    <Button><span class="min">&#95;</span></Button>
     <Button
-      ><span class="min"><span>_</span></span></Button
+      ><span class="max"><span>&#9744;</span></span></Button
     >
-    <Button
-      ><span class="max"><span>□</span></span></Button
-    >
-    <Button><span class="close">×</span></Button>
+    <Button><span>&#10005;</span></Button>
   </div>
 </template>
 
@@ -24,21 +22,14 @@ span.min {
   font-size: 0.9em;
 }
 
-span.min > * {
-  position: relative;
-  bottom: 0.025em;
-}
-
 span.max {
-  font-size: 1.8em;
+  font-size: 1.25em;
+  font-weight: 800;
 }
 
 span.max > * {
   position: relative;
-  bottom: 0.04em;
-}
-
-span.close {
-  font-size: 1.3em;
+  bottom: 0.054em;
+  left: 0.03em;
 }
 </style>
