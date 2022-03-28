@@ -12,24 +12,7 @@ import Emoji from "./Emoji.vue";
 
 export default {
   components: { NumberBoard, Emoji },
-  props: ["newGame", "startTime", "bombsLeft"],
-  data() {
-    return {
-      timer: 0,
-    };
-  },
-  mounted() {
-    const timeInterval = setInterval(() => {
-      const now = Date.now();
-      if (this.startTime) {
-        const timerMilli = now - this.startTime;
-        this.timer = Math.floor(timerMilli / 1000);
-      }
-
-      if (!this.startTime) this.timer = 0;
-    }, 10);
-    return () => clearInterval(timeInterval);
-  },
+  props: ["newGame", "timer", "bombsLeft"],
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <Status :newGame="newGame" :startTime="startTime" :bombsLeft="bombsLeft" />
+    <Status :newGame="newGame" :timer="timer" :bombsLeft="bombsLeft" />
     <Game :click="click" />
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   methods: {
     newGame() {
       this.startTime = null;
+      this.timer = 0;
       this.clicked = [];
       this.labelledBombs = [];
       this.bombs = [];
@@ -40,6 +41,17 @@ export default {
         this.labelledBombs
       );
     },
+  },
+  mounted() {
+    const timeInterval = setInterval(() => {
+      const now = Date.now();
+      if (this.startTime) {
+        const timerMilli = now - this.startTime;
+        this.timer = Math.floor(timerMilli / 1000);
+      }
+      if (!this.startTime) this.timer = 0;
+    }, 10);
+    return () => clearInterval(timeInterval);
   },
 };
 </script>
