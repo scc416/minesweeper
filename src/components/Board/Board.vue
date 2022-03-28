@@ -10,7 +10,6 @@ import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
 import { initState } from "../../constants";
 import {
-  isInArray,
   generateBombs,
   removeCoordinate,
   checkIfClickedFlagged,
