@@ -12,7 +12,13 @@
 <script>
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
-import { initState } from "../../constants";
+import {
+  initState,
+  GAME_PENDING,
+  GAME_ON,
+  GAME_WIN,
+  GAME_LOSE,
+} from "../../constants";
 import {
   generateBombs,
   removeCoordinate,
@@ -43,6 +49,7 @@ export default {
       this.bombs = [];
     },
     click(coordinate) {
+      if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
       const isNewGame = !this.startTime;
       if (isNewGame) {
         this.startTime = Date.now();
@@ -56,6 +63,7 @@ export default {
       if (!isClicked && !isFlagged) this.clicked.push(coordinate);
     },
     rightClick(coordinate) {
+      if (this.gameState === GAME_WIN || this.gameState === GAME_LOSE) return;
       return (e) => {
         e.preventDefault();
         const { isClicked, isFlagged } = checkIfClickedFlagged(
