@@ -16,7 +16,7 @@ export const isInArray = (arr, co1) => {
 export const makeNumArr = (num) => {
   const arr = [];
   for (let i = 0; i < num; i++) {
-    arr.push(num);
+    arr.push(i);
   }
   return arr;
 };
