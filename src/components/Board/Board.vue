@@ -8,17 +8,12 @@
 <script>
 import Status from "./Status/Status.vue";
 import Game from "./Game/Game.vue";
+import { initState } from "../../constants";
 
 export default {
   components: { Status, Game },
   data() {
-    return {
-      state: 0,
-      startTime: null,
-      clicked: [],
-      labelledBombs: [],
-      bombs: [],
-    };
+    return initState;
   },
 };
 </script>
