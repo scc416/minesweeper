@@ -28,7 +28,7 @@ export default {
   mounted() {
     const timeInterval = setInterval(() => {
       this.timer = updateTimer(this.startTime);
-    }, 10);
+    }, 100);
     return () => clearInterval(timeInterval);
   },
 };
