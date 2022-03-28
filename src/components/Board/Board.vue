@@ -111,7 +111,7 @@ export default {
   mounted() {
     const timeInterval = setInterval(() => {
       if (this.gameState === GAME_ON) this.timer = updateTimer(this.startTime);
-    }, 100);
+    }, 50);
     return () => clearInterval(timeInterval);
   },
   watch: {

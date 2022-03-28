@@ -79,8 +79,9 @@ export const numFormatter = (time) => {
   return `00${time}`;
 };
 
-export const calculateBombsLeft = (startTime, labelledBombs) => {
-  if (!startTime) return 0;
+export const calculateBombsLeft = (gameState, labelledBombs) => {
+  const started = gameState !== GAME_PENDING;
+  if (!started) return 0;
   const bombsLeft = numOfBomb - labelledBombs.length;
   return bombsLeft;
 };

@@ -16,7 +16,7 @@ export default {
   props: ["newGame", "timer", "flagged", "gameState", "mouseDown"],
   computed: {
     bombsLeft() {
-      return calculateBombsLeft(this.timer, this.flagged);
+      return calculateBombsLeft(this.gameState, this.flagged);
     },
   },
 };
