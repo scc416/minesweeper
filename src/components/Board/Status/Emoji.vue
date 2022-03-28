@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { GAME_PENDING, GAME_ON, GAME_WIN, GAME_LOSE } from "../../../constants";
+import { GAME_WIN, GAME_LOSE } from "../../../constants";
 
 export default {
   props: ["newGame", "gameState"],
