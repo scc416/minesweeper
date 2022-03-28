@@ -93,7 +93,7 @@ export default {
       );
     },
     gameOn() {
-      return this.gameState === GAME_ON;
+      return this.gameState === GAME_ON || this.gameState === GAME_PENDING;
     },
   },
 };
