@@ -88,12 +88,7 @@ export default {
   },
   computed: {
     gameState() {
-      return getGameState(
-        this.startTime,
-        this.clicked,
-        this.bombs,
-        this.numOfCoordinateToBeFound
-      );
+      return getGameState(this.startTime, this.clicked, this.bombs);
     },
   },
 

@@ -1,5 +1,6 @@
 export const numOfBomb = 10;
 export const numOfRow = 8;
+export const numOfCoordinateToBeFound = numOfRow * numOfRow - numOfBomb;
 
 export const MINE_FILEPATH = "../../../assets/icon/mine.png";
 export const FLAG_FILEPATH = "../../../assets/icon/flag.png";
@@ -22,6 +23,5 @@ export const initState = {
   clicked: [],
   flagged: [],
   bombs: [],
-  numOfCoordinateToBeFound: numOfRow * numOfBomb,
   timer: 0,
 };

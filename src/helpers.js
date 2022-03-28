@@ -12,6 +12,7 @@ import {
   MINE_FILEPATH,
   FLAG_FILEPATH,
   EXPLODED_OTHER,
+  numOfCoordinateToBeFound,
 } from "./constants";
 
 const isSameCoordinate = (co1, co2) => {
@@ -57,7 +58,7 @@ const makeRandomCoordinate = (num) => {
 export const generateBombs = (firstCoordinate) => {
   const bombs = [];
 
-  for (let i = 0; i < numOfRow; i++) {
+  for (let i = 0; i < numOfBomb; i++) {
     let coordinate = null;
     while (
       !coordinate ||
@@ -99,7 +100,7 @@ export const checkIfClickedFlagged = (clicked, flagged, coordinate) => {
   return { isClicked, isFlagged };
 };
 
-export const getGameState = (startTime, clicked, bombs, numOfCoordinate) => {
+export const getGameState = (startTime, clicked, bombs) => {
   const gameStarted = startTime;
   if (!gameStarted) return GAME_PENDING;
 
@@ -109,7 +110,7 @@ export const getGameState = (startTime, clicked, bombs, numOfCoordinate) => {
   }
 
   const numOfClicked = clicked.length;
-  const allClicked = numOfClicked - numOfCoordinate === 0;
+  const allClicked = numOfClicked - numOfCoordinateToBeFound === 0;
   if (allClicked) return GAME_WIN;
 
   return GAME_ON;
@@ -129,11 +130,10 @@ export const getCoordinateState = (
   );
   const isBomb = isInArray(bombs, coordinate);
 
-  if (isFlagged) return FLAGGED;
-
   switch (gameState) {
     case GAME_ON:
       if (isClicked) return CLICKED;
+      if (isFlagged) return FLAGGED;
       break;
     case GAME_LOSE:
       if (isClicked && isBomb) return EXPLODED;
@@ -141,8 +141,8 @@ export const getCoordinateState = (
       if (isBomb) return EXPLODED_OTHER;
       break;
     case GAME_WIN:
-      if (isBomb) return FLAGGED;
-      return CLICKED;
+      if (isFlagged) return FLAGGED;
+      if (!isBomb) return CLICKED;
   }
   return NONE;
 };
