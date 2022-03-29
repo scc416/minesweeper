@@ -1,15 +1,13 @@
 # minesweeper
 
-## state
+## Table of Content
 
-### state of game
-
-- `GAME_PENDING`
-- `GAME_ON`
-- `GAME_WIN`
-- `GAME_LOSE`
-
-### state of coordinate
+- [Live Demo](#live-demo)
+- [Final Product](#final-product)
+- [Dependencies](#dependencies)
+- [Getting Started](#getting-started)
+- [File Structure](#file-structure)
+- [Credits](#credits)
 
 ## Credits
 
@@ -36,7 +34,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
