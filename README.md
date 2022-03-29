@@ -1,4 +1,6 @@
-# minesweeper
+# Minesweeper
+
+A simple Microsoft Minesweeper clone, built with Vue3.
 
 ## Table of Content
 
@@ -14,6 +16,8 @@ The web app is deployed to [Netlify](https://www.netlify.com):
 https://the-minesweeper.netlify.app/
 
 ## Final Product
+
+![desktop](./docs/desktop.png)
 
 ## Dependencies
 
