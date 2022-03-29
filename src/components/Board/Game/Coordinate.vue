@@ -5,7 +5,14 @@
 </template>
 
 <script>
-import { FLAGGED, EXPLODED, EXPLODED_OTHER, CLICKED } from "../../../constants";
+import {
+  FLAGGED,
+  EXPLODED,
+  EXPLODED_OTHER,
+  CLICKED,
+  MINE_FILEPATH,
+  FLAG_FILEPATH,
+} from "../../../constants";
 
 export default {
   props: ["click", "rightClick", "getCoordinateState", "getAdjacentBombs"],
@@ -15,11 +22,9 @@ export default {
     },
     iconSrc() {
       return this.state === FLAGGED
-        ? require("../../../assets/icon/flag.png")
-        : this.state === EXPLODED
-        ? require("../../../assets/icon/mine.png")
-        : this.state === EXPLODED_OTHER
-        ? require("../../../assets/icon/mine.png")
+        ? FLAG_FILEPATH
+        : this.state === EXPLODED || this.state === EXPLODED_OTHER
+        ? MINE_FILEPATH
         : "";
     },
     className() {

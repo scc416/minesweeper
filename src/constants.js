@@ -15,11 +15,14 @@ export const FLAGGED = "FLAGGED";
 export const EXPLODED = "EXPLODED";
 export const EXPLODED_OTHER = "EXPLODED_OTHER";
 
+export const FLAG_FILEPATH = require("@/assets/icon/flag.png");
+export const MINE_FILEPATH = require("@/assets/icon/mine.png");
+
 export const initState = {
   startTime: null,
   clicked: [],
   flagged: [],
   bombs: [],
   timer: 0,
-  mouseDown: false
+  mouseDown: false,
 };
