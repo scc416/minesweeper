@@ -10,6 +10,9 @@
 
 ## Live Demo
 
+The web app is deployed to [Netlify](https://www.netlify.com):  
+https://the-minesweeper.netlify.app/
+
 ## Final Product
 
 ## Dependencies
