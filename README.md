@@ -19,21 +19,11 @@ https://the-minesweeper.netlify.app/
 
 ## Getting Started
 
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
+1. Clone or download this repository onto your local device.
+2. `cd` to the folder where this project is cloned.
+3. Install all dependencies with `npm install` command.
+4. Run the app in the development mode with `npm run serve` command.
+5. Open the broswer and visit: [http://localhost:8080/](http://localhost:8080/).
 
 ## Credits
 
