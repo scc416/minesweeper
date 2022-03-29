@@ -17,6 +17,8 @@ https://the-minesweeper.netlify.app/
 
 ## Dependencies
 
+- [Vue.js](https://vuejs.org/)
+
 ## Getting Started
 
 1. Clone or download this repository onto your local device.
