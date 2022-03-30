@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="../../../public/favicon.png" />
+    <img src="@/../public/favicon.png" />
     <span>Minesweeper</span>
   </div>
 </template>

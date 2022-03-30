@@ -9,7 +9,7 @@
 <script>
 import NumberBoard from "./NumberBoard.vue";
 import Emoji from "./Emoji.vue";
-import { calculateBombsLeft } from "../../../helpers";
+import { calculateBombsLeft } from "@/helpers";
 
 export default {
   components: { NumberBoard, Emoji },
