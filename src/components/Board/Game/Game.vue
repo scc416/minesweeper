@@ -15,8 +15,8 @@
 
 <script>
 import Coordinate from "./Coordinate.vue";
-import { numOfRow } from "../../../constants";
-import { makeNumArr } from "../../../helpers";
+import { numOfRow } from "@/constants";
+import { makeNumArr } from "@/helpers";
 
 export default {
   props: [
