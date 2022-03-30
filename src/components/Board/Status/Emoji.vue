@@ -10,7 +10,7 @@ import {
   DEAD_FILEPATH,
   SURPRISED_FILEPATH,
   SMILE_FILEPATH,
-} from "../../../constants";
+} from "@/constants";
 
 export default {
   props: ["newGame", "gameState", "mouseDown"],
