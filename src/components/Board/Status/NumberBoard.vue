@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { numFormatter } from "../../../helpers";
+import { numFormatter } from "@/helpers";
 
 export default { props: ["number"], methods: { numFormatter } };
 </script>
