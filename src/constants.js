@@ -15,8 +15,15 @@ export const FLAGGED = "FLAGGED";
 export const EXPLODED = "EXPLODED";
 export const EXPLODED_OTHER = "EXPLODED_OTHER";
 
+// icon file path
 export const FLAG_FILEPATH = require("@/assets/icon/flag.png");
 export const MINE_FILEPATH = require("@/assets/icon/mine.png");
+
+// emoji file path
+export const SUNGLASS_FILEPATH = require("@/assets/emoji/sunglass.png");
+export const DEAD_FILEPATH = require("@/assets/emoji/dead.png");
+export const SURPRISED_FILEPATH = require("@/assets/emoji/suprised.png");
+export const SMILE_FILEPATH = require("@/assets/emoji/smile.png");
 
 export const initState = {
   startTime: null,

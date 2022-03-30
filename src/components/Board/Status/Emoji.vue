@@ -3,19 +3,26 @@
 </template>
 
 <script>
-import { GAME_WIN, GAME_LOSE } from "../../../constants";
+import {
+  GAME_WIN,
+  GAME_LOSE,
+  SUNGLASS_FILEPATH,
+  DEAD_FILEPATH,
+  SURPRISED_FILEPATH,
+  SMILE_FILEPATH,
+} from "../../../constants";
 
 export default {
   props: ["newGame", "gameState", "mouseDown"],
   computed: {
     iconSrc() {
       return this.gameState === GAME_WIN
-        ? require("../../../assets/emoji/sunglass.png")
+        ? SUNGLASS_FILEPATH
         : this.gameState === GAME_LOSE
-        ? require("../../../assets/emoji/dead.png")
+        ? DEAD_FILEPATH
         : this.mouseDown
-        ? require("../../../assets/emoji/suprised.png")
-        : require("../../../assets/emoji/smile.png");
+        ? SURPRISED_FILEPATH
+        : SMILE_FILEPATH;
     },
   },
 };
