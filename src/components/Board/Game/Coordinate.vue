@@ -12,7 +12,7 @@ import {
   CLICKED,
   MINE_FILEPATH,
   FLAG_FILEPATH,
-} from "../../../constants";
+} from "@/constants";
 
 export default {
   props: ["click", "rightClick", "getCoordinateState", "getAdjacentBombs"],
